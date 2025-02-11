@@ -7,8 +7,86 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+
+  <!-- Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+  <header>
+    <h2>
+      Good morning.
+    </h2>
+    <input type="text" id="search" placeholder="Search for a city">
+    <div class="unit-wrapper">
+      <label for="unit-type">C°</label>
+      <input type="checkbox" id="unit-type" checked>
+    </div>
+  </header>
+
+  <section id="actual">
+    <div id="actual-date-wrapper">
+      <span id="actual-location">
+        <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF">
+          <title>Map marker outline</title>
+          <path d="M12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5M12,2A7,7 0 0,1 19,9C19,14.25 12,22 12,22C12,22 5,14.25 5,9A7,7 0 0,1 12,2M12,4A5,5 0 0,0 7,9C7,10 7,12 12,18.71C17,12 17,10 17,9A5,5 0 0,0 12,4Z" />
+        </svg>
+        <p id="location">
+          City, Country
+        </p>
+      </span>
+
+      <h2 id="actual-day">
+        Monday
+      </h2>
+      
+      <p id="actual-date">
+        1st Jan, 2025
+      </p>
+      
+      <p id="last-update">
+        Last update at <span class="time">12:00</span>
+      </p>
+    </div>
+
+    <img class="large-icon" id="actual-icon" src="icons/weather/rain-sun.png" alt="Clear sky">
+
+    <div id="actual-info">
+      <h2>
+        <span id="">19°<span class="unit">C</span></span>
+      </h2>
+      <div>
+        <p id="actual-description">
+          Clear sky
+        </p>
+        <p id="actual-feel">
+          Feels like 20°
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="today">
+    <p>today</p>
+  </section>
+
+  <section id="next-days">
+    <p>next days</p>
+  </section>
+
+  <footer>
+    <a href="https://www.flaticon.com/packs/weather-forecast-17">
+      Weather Forecast Icons
+    </a>
+    &nbsp;by&nbsp;
+    <a href="https://www.flaticon.com/authors/apien">
+      apien
+    </a>
+    &nbsp;-&nbsp;
+    <a href="https://www.flaticon.com/search?word=weather%20forecast">
+      Flaticon
+    </a>
+  </footer>
 </body>
 </html>
