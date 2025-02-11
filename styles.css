@@ -1,0 +1,138 @@
+:root {
+  --color-bg: #0f0f0f;
+  --color-card: #1e1e1e;
+  --color-on-card: #363636;
+  --color-gray: #b2b2b2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: white;
+  height: 100%;
+  margin: 0;
+  padding-block: 24px;
+  padding-inline: 15%;
+  display: grid;
+  grid-template-areas: 
+    'header    header'
+    'actual    today'
+    'next-days next-days'
+    'footer    footer';
+  grid-template-rows: 1fr 6fr 6fr 1fr;
+  gap: 16px;
+}
+
+section {
+  background-color: var(--color-card);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer {
+  color: var(--color-gray);
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+#search {
+  background-color: var(--color-card);
+  color: white;
+  font-family: inherit;
+  width: 100ch;
+  padding: 8px 12px;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+}
+
+#actual {
+  grid-area: actual;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#actual img {
+  align-self: center;
+}
+
+#actual-location {
+  max-width: max-content;
+  background-color: var(--color-on-card);
+  border-radius: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: 300;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+
+#actual-day {
+  font-weight: normal;
+  font-size: 28px;
+}
+
+#actual-info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#actual-info h2 {
+  font-weight: normal;
+  font-size: 42px;
+}
+
+#actual-description {
+  color: var(--color-gray)
+}
+
+#today {
+  grid-area: today;
+}
+
+#next-days {
+  grid-area: next-days;
+}
+
+/* Icon sizes */
+.small-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.medium-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.large-icon {
+  width: 164px;
+  height: 164px;
+}
