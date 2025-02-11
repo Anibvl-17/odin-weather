@@ -71,6 +71,8 @@ footer a {
   border: none;
 }
 
+/* ---- Actual Styles ---- */
+
 #actual {
   grid-area: actual;
   display: grid;
@@ -110,18 +112,26 @@ footer a {
 }
 
 #actual-description {
-  color: var(--color-gray)
+  font-size: 1.1rem;
 }
+
+#actual-feel {
+  font-size: 0.9rem;
+}
+
+/* ---- Today Styles ---- */
 
 #today {
   grid-area: today;
 }
 
+/* ---- Next Days Styles ---- */
+
 #next-days {
   grid-area: next-days;
 }
 
-/* Icon sizes */
+/* ---- Icon sizes ---- */
 .small-icon {
   width: 24px;
   height: 24px;
