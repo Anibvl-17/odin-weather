@@ -24,6 +24,7 @@ function getTodayData(data) {
     description: data.description,
     feelslike: data.currentConditions.feelslike,
     temperature: data.currentConditions.temp,
+    icon: data.currentConditions.icon,
 
     // Today's highlights
     humidity: data.currentConditions.humidity,
@@ -57,21 +58,22 @@ function updateActualWeather(data) {
   const weekday = weekdays[date.getDay()];
   const fullDate = date.toLocaleDateString();
   const hour = date.toLocaleTimeString();
-
+  
+  const icon = data.icon;
   const location = data.location;
   const temperature = data.temperature;
   const description = data.description;
   const feelsLike = data.feelslike;
 
-  console.groupCollapsed('Actual Weather');
-  console.log('Location:', location);
-  console.log('Date:', fullDate);
-  console.log('Weekday:', weekday);
-  console.log('Hour:', hour);
-  console.log('Temperature:', temperature);
-  console.log('Description:', description);
-  console.log('Feels Like:', feelsLike);
-  console.groupEnd();
+  document.getElementById('location').textContent = location;
+  document.getElementById('actual-day').textContent = weekday;
+  document.getElementById('actual-date').textContent = fullDate;
+  document.getElementById('time').textContent = hour;
+  document.getElementById('actual-icon').src = `icons/${icon}.png`;
+  document.getElementById('actual-temperature').textContent = temperature;
+  document.getElementById('actual-unit').textContent = '°C';
+  document.getElementById('actual-description').textContent = description;
+  document.getElementById('actual-feel').textContent = 'Feels like ' + feelsLike;
 }
 
 function updateTodaysHighlights(data) {
