@@ -42,6 +42,10 @@ section {
   padding: 16px;
 }
 
+section h2 {
+  font-weight: normal;
+}
+
 header {
   grid-area: header;
   display: flex;
