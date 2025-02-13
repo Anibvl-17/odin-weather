@@ -26,19 +26,18 @@
   </header>
 
   <section id="actual">
+    <div id="actual-location">
+      <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 10.143C4 5.646 7.582 2 12 2s8 3.646 8 8.143c0 4.462-2.553 9.67-6.537 11.531a3.45 3.45 0 0 1-2.926 0C6.553 19.812 4 14.606 4 10.144Z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </g>
+      </svg>
+      <p id="location">
+        &nbsp;City, Country
+      </p>
+    </div>
     <div id="actual-date-wrapper">
-      <span id="actual-location">
-        <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
-          <g fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M4 10.143C4 5.646 7.582 2 12 2s8 3.646 8 8.143c0 4.462-2.553 9.67-6.537 11.531a3.45 3.45 0 0 1-2.926 0C6.553 19.812 4 14.606 4 10.144Z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </g>
-        </svg>
-        <p id="location">
-          &nbsp;City, Country
-        </p>
-      </span>
-
       <h2 id="actual-day">
         Monday
       </h2>
@@ -48,22 +47,22 @@
       </p>
       
       <p id="last-update">
-        Last update at <span class="time">12:00</span>
+        Last update at <span id="time">12:00</span>
       </p>
     </div>
 
-    <img class="large-icon" id="actual-icon" src="icons/rain-sun.png" alt="Clear sky">
+    <img class="large-icon" id="actual-icon" src="icons/placeholder.png" alt="Clear sky">
 
     <div id="actual-info">
       <h2>
-        <span id="actual-temperature">19°<span class="unit">C</span></span>
+        <span id="actual-temperature">19°</span><span class="temp-unit">C</span>
       </h2>
       <div>
         <p id="actual-description">
           Clear sky
         </p>
-        <p id="actual-feel">
-          Feels like 20°
+        <p>
+          Feels like <span id="actual-feel">20</span><span class="temp-unit">°C</span>
         </p>
       </div>
     </div>
@@ -85,7 +84,7 @@
         <h4>Wind</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <p><span class="today-card-value">Value </span><span class="today-card-unit">unit</span></p>
+        <p><span class="today-card-value">Value </span><span class="today-card-unit speed-unit">unit</span></p>
       </div>
       <p class="today-card-description">Description</p>
     </div>
@@ -98,7 +97,7 @@
         <h4>Humidity</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+        <span class="today-card-value">Value </span><span class="today-card-unit percent-unit">unit</span>
       </div>
       <p class="today-card-description">Description</p>
     </div>
@@ -119,7 +118,7 @@
         <h4>UV Index</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+        <span class="today-card-value">Value </span><span class="today-card-unit uv-unit">unit</span>
       </div>
       <p class="today-card-description">Description</p>
     </div>
@@ -132,7 +131,7 @@
         <h4>Visibility</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+        <span class="today-card-value">Value </span><span class="today-card-unit distance-unit">unit</span>
       </div>
       <p class="today-card-description">Description</p>
     </div>
@@ -153,8 +152,8 @@
       
       <div class="next-day">
         <p class="weekday">Day</p>
-        <img class="medium-icon" src="icons/foggy-day.png" alt="Day info">
-        <p><span class="day-temperature">19° </span><span class="day-unit">C</span></p>
+        <img class="medium-icon" src="icons/placeholder.png" alt="Day info">
+        <p><span class="day-temperature">19° </span><span class="temp-unit">C</span></p>
       </div>
 
     </div>
