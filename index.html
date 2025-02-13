@@ -56,7 +56,7 @@
 
     <div id="actual-info">
       <h2>
-        <span id="">19°<span class="unit">C</span></span>
+        <span id="actual-temperature">19°<span class="unit">C</span></span>
       </h2>
       <div>
         <p id="actual-description">
@@ -70,7 +70,81 @@
   </section>
 
   <section id="today">
-    <p>today</p>
+    <h2 id="today-title">
+      Today's Highlights
+    </h2>
+
+    <div id="today-wind" class="today-card today-info">
+      <div class="today-card-name">
+        <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+          <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="1.5">
+            <path d="M3 8h6.5A2.5 2.5 0 1 0 7 5.5v.357M4 14h14.5a3.5 3.5 0 1 1-3.5 3.5V17"/>
+            <path d="M2 11h16.5A3.5 3.5 0 1 0 15 7.5V8"/>
+          </g>
+        </svg>
+        <h4>Wind</h4>
+      </div>
+      <div class="today-card-value-wrapper">
+        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+      </div>
+      <p class="today-card-description">Description</p>
+    </div>
+
+    <div id="today-humidity" class="today-card today-info">
+      <div class="today-card-name">
+        <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+          <path fill="#ffffff" d="M12 22q-3.425 0-5.712-2.35T4 13.8q0-1.55.7-3.1t1.75-2.975T8.725 5.05T11 2.875q.2-.2.463-.287T12 2.5t.538.088t.462.287q1.05.925 2.275 2.175t2.275 2.675T19.3 10.7t.7 3.1q0 3.5-2.287 5.85T12 22m0-2q2.6 0 4.3-1.763T18 13.8q0-1.825-1.513-4.125T12 4.65Q9.025 7.375 7.513 9.675T6 13.8q0 2.675 1.7 4.438T12 20m.275-1q.3-.025.513-.238T13 18.25q0-.35-.225-.562T12.2 17.5q-1.025.075-2.175-.562t-1.45-2.313q-.05-.275-.262-.45T7.825 14q-.35 0-.575.263t-.15.612q.425 2.275 2 3.25t3.175.875"/>
+        </svg>
+        <h4>Humidity</h4>
+      </div>
+      <div class="today-card-value-wrapper">
+        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+      </div>
+      <p class="today-card-description">Description</p>
+    </div>
+
+    <div id="today-sunrise" class="today-card today-sun-info">
+      <img class="medium-icon" src="icons/sunset.png" alt="Sunrise">
+      <div>
+        <p>Sunrise</p>
+        <p class="sun-info-time sunrise-time">07:00</p>
+      </div>
+    </div>
+
+    <div id="today-uv" class="today-card today-info">
+      <div class="today-card-name">
+        <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+          <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h1m16 0h1M5.6 5.6l.7.7m12.1-.7l-.7.7M8 12a4 4 0 1 1 8 0m-4-8V3m1 13l2 5h1l2-5M6 16v3a2 2 0 1 0 4 0v-3"/>
+        </svg>
+        <h4>UV Index</h4>
+      </div>
+      <div class="today-card-value-wrapper">
+        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+      </div>
+      <p class="today-card-description">Description</p>
+    </div>
+
+    <div id="today-visibility" class="today-card today-info">
+      <div class="today-card-name">
+        <svg class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+          <path fill="#ffffff" d="M12 16q1.875 0 3.188-1.312T16.5 11.5t-1.312-3.187T12 7T8.813 8.313T7.5 11.5t1.313 3.188T12 16m0-1.8q-1.125 0-1.912-.788T9.3 11.5t.788-1.912T12 8.8t1.913.788t.787 1.912t-.787 1.913T12 14.2m0 4.8q-3.65 0-6.65-2.037T1 11.5q1.35-3.425 4.35-5.462T12 4t6.65 2.038T23 11.5q-1.35 3.425-4.35 5.463T12 19m0-2q2.825 0 5.188-1.487T20.8 11.5q-1.25-2.525-3.613-4.012T12 6T6.813 7.488T3.2 11.5q1.25 2.525 3.613 4.013T12 17"/>
+        </svg>
+        <h4>Visibility</h4>
+      </div>
+      <div class="today-card-value-wrapper">
+        <span class="today-card-value">Value </span><span class="today-card-unit">unit</span>
+      </div>
+      <p class="today-card-description">Description</p>
+    </div>
+
+    <div id="today-sunset" class="today-card today-sun-info">
+      <img class="medium-icon" src="icons/sunset.png" alt="Sunset">
+      <div>
+        <p>Sunset</p>
+        <p class="sun-info-time sunset-time">19:00</p>
+      </div>
+    </div>
+
   </section>
 
   <section id="next-days">
