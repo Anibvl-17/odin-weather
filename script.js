@@ -14,6 +14,7 @@ async function getWeatherData(location) {
   updateActualWeather(todayData);
   updateTodaysHighlights(todayData);
   updateNextDays(nextDaysData);
+  updateUnits();
 }
 
 function getTodayData(data) {
@@ -71,7 +72,6 @@ function updateActualWeather(data) {
   document.getElementById('time').textContent = hour;
   document.getElementById('actual-icon').src = `icons/${icon}.png`;
   document.getElementById('actual-temperature').textContent = temperature;
-  document.getElementById('actual-unit').textContent = '°C';
   document.getElementById('actual-description').textContent = description;
   document.getElementById('actual-feel').textContent = 'Feels like ' + feelsLike;
 }
@@ -117,6 +117,33 @@ function updateNextDays(data) {
     counter++;
   }
   console.groupEnd();
+}
+
+function updateUnits() {
+  const temperatureUnits = document.querySelectorAll('.temp-unit');
+  for (const unit of temperatureUnits) {
+    unit.textContent = ' °C';
+  }
+
+  const speedUnits = document.querySelectorAll('.speed-unit');
+  for (const unit of speedUnits) {
+    unit.textContent = ' km/h';
+  }
+
+  const distanceUnits = document.querySelectorAll('.distance-unit');
+  for (const unit of distanceUnits) {
+    unit.textContent = ' km';
+  }
+
+  const uvUnits = document.querySelectorAll('.uv-unit');
+  for (const unit of uvUnits) {
+    unit.textContent = ' UV';
+  }
+
+  const percentUnits = document.querySelectorAll('.percent-unit');
+  for (const unit of percentUnits) {
+    unit.textContent = ' %';
+  }
 }
 
 getWeatherData('Cabrero');
