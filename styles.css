@@ -82,6 +82,7 @@ footer a {
   grid-area: actual;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 #actual img {
@@ -89,14 +90,16 @@ footer a {
 }
 
 #actual-location {
+  grid-column: 1 / 4;
   max-width: max-content;
   background-color: var(--color-badge);
   border-radius: 12px;
+  font-weight: 300;
   display: flex;
   justify-content: start;
   align-items: center;
-  font-weight: 300;
-  padding: 4px 12px;
+  gap: 4px;
+  padding: 4px 8px;
   margin-bottom: 12px;
 }
 
