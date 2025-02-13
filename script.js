@@ -78,20 +78,18 @@ function updateActualWeather(data) {
 
 function updateTodaysHighlights(data) {
   const humidity = data.humidity;
-  const uvindex = data.uvindex;
+  const uvIndex = data.uvindex;
   const visibility = data.visibility;
   const windspeed = data.windspeed;
   const sunrise = data.sunrise;
   const sunset = data.sunset;
 
-  console.groupCollapsed('Today\'s Highlights');
-  console.log('Humidity:', humidity);
-  console.log('UV Index:', uvindex);
-  console.log('Visibility:', visibility);
-  console.log('Windspeed:', windspeed);
-  console.log('Sunrise:', sunrise);
-  console.log('Sunset:', sunset);
-  console.groupEnd();
+  document.getElementById('humidity').textContent = humidity;
+  document.getElementById('uv-index').textContent = uvIndex;
+  document.getElementById('visibility').textContent = visibility;
+  document.getElementById('windspeed').textContent = windspeed;
+  document.getElementById('sunrise-time').textContent = sunrise;
+  document.getElementById('sunset-time').textContent = sunset
 }
 
 function updateNextDays(data) {
