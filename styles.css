@@ -1,7 +1,8 @@
 :root {
   --color-bg: #0f0f0f;
   --color-card: #1e1e1e;
-  --color-on-card: #363636;
+  --color-on-card: #272727;
+  --color-badge: #363636;
   --color-gray: #b2b2b2;
 }
 
@@ -13,7 +14,7 @@ html {
   height: 100%;
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, h4 {
   margin: 0;
 }
 
@@ -85,7 +86,7 @@ footer a {
 
 #actual-location {
   max-width: max-content;
-  background-color: var(--color-on-card);
+  background-color: var(--color-badge);
   border-radius: 12px;
   display: flex;
   justify-content: start;
@@ -123,6 +124,90 @@ footer a {
 
 #today {
   grid-area: today;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: auto 1fr 1fr;
+  grid-template-areas: 
+    'title title      title'
+    'wind  humidity   sunrise'
+    'uv    visibility sunset';
+  gap: 12px;
+}
+
+#today h4 {
+  font-weight: normal;
+}
+
+#today-title {
+  grid-area: title;
+}
+
+#today-wind {
+  grid-area: wind;
+}
+
+#today-humidity {
+  grid-area: humidity;
+}
+
+#today-sunrise {
+  grid-area: sunrise;
+}
+
+#today-uv {
+  grid-area: uv;
+}
+
+#today-visibility {
+  grid-area: visibility;
+}
+
+#today-sunset {
+  grid-area: sunset;
+}
+
+.today-card {
+  background-color: var(--color-on-card);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.today-card-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.today-card-description,
+.today-card-unit {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.today-card-name {
+  display: flex;
+  gap: 4px;
+  justify-self: center;
+}
+
+.today-info {
+  display: grid;
+  grid-template-rows: 1fr 1fr auto;
+  justify-items: end;
+}
+
+.today-sun-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.today-sun-info div {
+  justify-self: center;
+}
+
+.sun-info-time {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 /* ---- Next Days Styles ---- */
@@ -138,8 +223,8 @@ footer a {
 }
 
 .medium-icon {
-  width: 48px;
-  height: 48px;
+  width: 96px;
+  height: 96px;
 }
 
 .large-icon {
