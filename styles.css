@@ -73,7 +73,12 @@ footer a {
   padding: 8px 12px;
   border-radius: 16px;
   outline: none;
-  border: none;
+  border: 1px solid transparent;
+  transition: ease 200ms;
+}
+
+#search:focus {
+  border-color: #b9b9b9;
 }
 
 /* ---- Actual Styles ---- */
