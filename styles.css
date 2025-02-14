@@ -233,6 +233,7 @@ footer a {
 
 #next-days-container {
   grid-row: 2 / 3;
+  grid-column: 1 / 11;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
