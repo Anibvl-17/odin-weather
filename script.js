@@ -26,8 +26,8 @@ function getTodayData(data) {
     location: data.resolvedAddress,
     datetimeEpoch: data.currentConditions.datetimeEpoch,
     description: data.description,
-    feelslike: data.currentConditions.feelslike,
-    temperature: data.currentConditions.temp,
+    feelslike: Math.round(data.currentConditions.feelslike),
+    temperature: Math.round(data.currentConditions.temp),
     icon: data.currentConditions.icon,
 
     // Today's highlights
@@ -48,8 +48,8 @@ function getNextDaysData(data) {
     nextDays.push({
       datetimeEpoch: day.datetimeEpoch,
       icon: day.icon,
-      tempMin: day.tempmin,
-      tempMax: day.tempmax
+      tempMin: Math.round(day.tempmin),
+      tempMax: Math.round(day.tempmax)
     });
   }
 
