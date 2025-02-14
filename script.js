@@ -17,6 +17,7 @@ async function getWeatherData(location) {
   updateActualWeather(todayData);
   updateTodaysHighlights(todayData);
   updateNextDays(nextDaysData);
+  if (tempUnit === ' °C') updateValues();
   updateUnits();
 }
 
@@ -147,6 +148,19 @@ function updateNextDays(data) {
   }
 }
 
+function updateValues() {
+  const tempValues = document.querySelectorAll('.temp-value');
+  if (tempUnit === ' °C') {
+    for (const value of tempValues) {
+      value.textContent = Math.round((parseInt(value.textContent) - 32) * 5/9);
+    }
+  } else {
+    for (const value of tempValues) {
+      value.textContent = Math.round((parseInt(value.textContent) * 9/5) + 32);
+    }
+  }
+}
+
 function updateUnits() {
   const temperatureUnits = document.querySelectorAll('.temp-unit');
   for (const unit of temperatureUnits) {
@@ -219,16 +233,11 @@ document.getElementById('unit-type').addEventListener('change', () => {
 
   if (tempUnit === ' °C') {
     tempUnit = ' °F';
-    for (const value of tempValues) {
-      value.textContent = Math.round((parseInt(value.textContent) * 9/5) + 32);
-    }
   } else {
     tempUnit = ' °C';
-    for (const value of tempValues) {
-      value.textContent = Math.round((parseInt(value.textContent) - 32) * 5/9);
-    }
   }
 
+  updateValues();
   updateUnits();
 });
 
