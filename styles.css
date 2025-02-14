@@ -248,6 +248,14 @@ footer a {
   justify-content: space-around;
 }
 
+.min-next-day::before {
+  content: 'Min: ';
+}
+
+.max-next-day::before {
+  content: 'Max: ';
+}
+
 /* ---- Icon sizes ---- */
 .small-icon {
   width: 24px;
