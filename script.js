@@ -76,7 +76,7 @@ function updateActualWeather(data) {
   document.getElementById('actual-icon').src = `icons/${icon}.png`;
   document.getElementById('actual-temperature').textContent = temperature;
   document.getElementById('actual-description').textContent = description;
-  document.getElementById('actual-feel').textContent = 'Feels like ' + feelsLike;
+  document.getElementById('feelslike').textContent = feelsLike;
 }
 
 function updateTodaysHighlights(data) {
