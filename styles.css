@@ -56,8 +56,7 @@ header {
 footer {
   color: var(--color-gray);
   grid-area: footer;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 footer a {
