@@ -8,6 +8,8 @@ async function getWeatherData(location) {
   const response = await fetch(url);
   const data = await response.json();
 
+  console.log(data);
+
   const todayData = getTodayData(data);
   const nextDaysData = getNextDaysData(data);
 
@@ -83,11 +85,25 @@ function updateTodaysHighlights(data) {
   const windspeed = data.windspeed;
   const sunrise = data.sunrise;
   const sunset = data.sunset;
+  const hour = new Date(data.datetimeEpoch * 1000).toLocaleTimeString();
 
   document.getElementById('humidity').textContent = humidity;
+  if (humidity <= 30) document.getElementById('humidity-description').textContent = 'Low';
+  else if (humidity <= 60) document.getElementById('humidity-description').textContent = 'Moderate';
+  else document.getElementById('humidity-description').textContent = 'High';
+  
   document.getElementById('uv-index').textContent = uvIndex;
+  if (uvIndex <= 3) document.getElementById('uv-description').textContent = 'Low UV';
+  else if (uvIndex <= 5) document.getElementById('uv-description').textContent = 'Moderate UV';
+  else if (uvIndex <= 8) document.getElementById('uv-description').textContent = 'High UV';
+  else document.getElementById('uv-description').textContent = 'Extreme UV';
+
   document.getElementById('visibility').textContent = visibility;
+  document.getElementById('visibility-description').textContent = hour;
+
   document.getElementById('windspeed').textContent = windspeed;
+  
+
   document.getElementById('sunrise-time').textContent = sunrise;
   document.getElementById('sunset-time').textContent = sunset
 }
