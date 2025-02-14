@@ -121,6 +121,9 @@ function updateTodaysHighlights(data) {
 
 function updateNextDays(data) {
   const container = document.getElementById('next-days-container');
+
+  // Remove all childs to prevent duplication
+  container.textContent = "";
   
   // Used to limit the number of days to display (upto 10 days)
   let counter = 0;
@@ -227,4 +230,10 @@ document.getElementById('unit-type').addEventListener('change', () => {
   }
 
   updateUnits();
+});
+
+document.getElementById('search-location').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const location = document.getElementById('search').value;
+  getWeatherData(location);
 });
