@@ -7,10 +7,21 @@ async function getWeatherData(location) {
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`;
 
   const response = await fetch(url);
+  const status = response.status;
+  if (status === 400) {
+    alert(`Sorry, the location '${location}' couldn't be found, check if the location is correct or try another location.`);
+    return;
+  } else if (status === 401 || status === 429) {
+    alert(`An error ocurred, please contact me in the link below (the GitHub link). Error code: ${status}`);
+    return;
+  } else if (status === 50) { // response with code 500
+    alert('An error ocurred with the weather service, please try again later.')
+    return;
+  }
+
   const data = await response.json();
 
-  console.log(data);
-
+  
   const todayData = getTodayData(data);
   const nextDaysData = getNextDaysData(data);
 
