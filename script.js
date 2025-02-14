@@ -34,6 +34,7 @@ function getTodayData(data) {
     uvindex: data.currentConditions.uvindex,
     visibility: data.currentConditions.visibility,
     windspeed: data.currentConditions.windspeed,
+    winddir: data.currentConditions.winddir,
     sunrise: data.currentConditions.sunrise,
     sunset: data.currentConditions.sunset,
   };
