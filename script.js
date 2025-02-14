@@ -84,6 +84,7 @@ function updateTodaysHighlights(data) {
   const uvIndex = data.uvindex;
   const visibility = data.visibility;
   const windspeed = data.windspeed;
+  const winddir = data.winddir;
   const sunrise = data.sunrise;
   const sunset = data.sunset;
   const hour = new Date(data.datetimeEpoch * 1000).toLocaleTimeString();
@@ -103,7 +104,15 @@ function updateTodaysHighlights(data) {
   document.getElementById('visibility-description').textContent = hour;
 
   document.getElementById('windspeed').textContent = windspeed;
-  
+  document.getElementById('winddir-icon').style.transform = `rotate(${winddir}deg)`;
+  if (winddir >= 337.5 || winddir < 22.5) document.getElementById('wind-description').textContent = 'North';
+  else if (winddir < 67.5) document.getElementById('wind-description').textContent = 'Northeast';
+  else if (winddir < 112.5) document.getElementById('wind-description').textContent = 'East';
+  else if (winddir < 157.5) document.getElementById('wind-description').textContent = 'Southeast';
+  else if (winddir < 202.5) document.getElementById('wind-description').textContent = 'South';
+  else if (winddir < 247.5) document.getElementById('wind-description').textContent = 'Southwest';
+  else if (winddir < 292.5) document.getElementById('wind-description').textContent = 'West';
+  else document.getElementById('wind-description').textContent = 'Northwest';
 
   document.getElementById('sunrise-time').textContent = sunrise;
   document.getElementById('sunset-time').textContent = sunset
