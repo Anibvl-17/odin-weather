@@ -186,7 +186,7 @@ function buildNextDayItem(data) {
   const temperature = document.createElement('p');
 
   const minTemp = document.createElement('span');
-  minTemp.classList.add('min-next-day');
+  minTemp.classList.add('min-next-day', 'temp-value');
   minTemp.textContent = data.tempMin;
   temperature.appendChild(minTemp);
 
@@ -196,7 +196,7 @@ function buildNextDayItem(data) {
   const br = document.createElement('br');
 
   const maxTemp = document.createElement('span');
-  maxTemp.classList.add('max-next-day');
+  maxTemp.classList.add('max-next-day', 'temp-value');
   maxTemp.textContent = data.tempMax;
 
   const maxTempUnit = document.createElement('span');
