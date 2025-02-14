@@ -1,5 +1,6 @@
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+let tempUnit = ' °F';
 
 async function getWeatherData(location) {
   const apiKey = 'EA5SLWEQCKVXL8BNXMZT8TWRY';
@@ -146,7 +147,7 @@ function updateNextDays(data) {
 function updateUnits() {
   const temperatureUnits = document.querySelectorAll('.temp-unit');
   for (const unit of temperatureUnits) {
-    unit.textContent = ' °C';
+    unit.textContent = tempUnit;
   }
 
   const speedUnits = document.querySelectorAll('.speed-unit');
@@ -208,4 +209,22 @@ function buildNextDayItem(data) {
   return item;
 }
 
-getWeatherData('Cabrero');
+getWeatherData('Santiago');
+
+document.getElementById('unit-type').addEventListener('change', () => {
+  const tempValues = document.querySelectorAll('.temp-value');
+
+  if (tempUnit === ' °C') {
+    tempUnit = ' °F';
+    for (const value of tempValues) {
+      value.textContent = Math.round((parseInt(value.textContent) * 9/5) + 32);
+    }
+  } else {
+    tempUnit = ' °C';
+    for (const value of tempValues) {
+      value.textContent = Math.round((parseInt(value.textContent) - 32) * 5/9);
+    }
+  }
+
+  updateUnits();
+});
