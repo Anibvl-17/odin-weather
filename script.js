@@ -119,28 +119,28 @@ function updateTodaysHighlights(data) {
 }
 
 function updateNextDays(data) {
+  const container = document.getElementById('next-days-container');
+  
   // Used to limit the number of days to display (upto 10 days)
   let counter = 0;
 
-  console.groupCollapsed('Next Days');
   for (const day of data) {
     if (counter >= 10) break;
-
     const date = new Date(day.datetimeEpoch * 1000);
     const weekday = date.getDay();
-    const fullDate = date.toLocaleDateString();
-    const icon = day.icon;
-    const tempMin = day.tempMin;
-    const tempMax = day.tempMax;
-    console.groupCollapsed('Day', fullDate, '(', weekdays[weekday], ')');
-    console.log('Icon:', icon);
-    console.log('Min Temp:', tempMin);
-    console.log('Max Temp:', tempMax);
-    console.groupEnd();
+
+    const dayData = {
+      weekday: weekdays[weekday],
+      icon: day.icon,
+      tempMin: day.tempMin,
+      tempMax: day.tempMax
+    }
+
+    const item = buildNextDayItem(dayData);
+    container.appendChild(item);
 
     counter++;
   }
-  console.groupEnd();
 }
 
 function updateUnits() {
@@ -168,6 +168,44 @@ function updateUnits() {
   for (const unit of percentUnits) {
     unit.textContent = ' %';
   }
+}
+
+function buildNextDayItem(data) {
+  const item = document.createElement('div');
+  item.classList.add('next-day');
+
+  const weekday = document.createElement('p');
+  weekday.classList.add('weekday');
+  weekday.textContent = data.weekday;
+
+  const icon = document.createElement('img');
+  icon.classList.add('medium-icon');
+  icon.src = `icons/${data.icon}.png`;
+
+  const temperature = document.createElement('p');
+
+  const minTemp = document.createElement('span');
+  minTemp.classList.add('min-next-day');
+  minTemp.textContent = data.tempMin;
+  temperature.appendChild(minTemp);
+
+  const minTempUnit = document.createElement('span');
+  minTempUnit.classList.add('temp-unit');
+
+  const br = document.createElement('br');
+
+  const maxTemp = document.createElement('span');
+  maxTemp.classList.add('max-next-day');
+  maxTemp.textContent = data.tempMax;
+
+  const maxTempUnit = document.createElement('span');
+  maxTempUnit.classList.add('temp-unit');
+
+  temperature.append(minTemp, minTempUnit, br, maxTemp, maxTempUnit);
+
+  item.append(weekday, icon, temperature);
+  
+  return item;
 }
 
 getWeatherData('Cabrero');
