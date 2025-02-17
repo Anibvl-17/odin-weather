@@ -39,16 +39,16 @@
         </g>
       </svg>
       <p id="location">
-        &nbsp;City, Country
+        &nbsp;Loading location...
       </p>
     </div>
     <div id="actual-date-wrapper">
       <h2 id="actual-day">
-        Monday
+        Loading...
       </h2>
       
       <p id="actual-date">
-        1st Jan, 2025
+        --/--/----
       </p>
       
       <p id="actual-time">
@@ -60,15 +60,15 @@
 
     <div id="actual-info">
       <h2>
-        <span id="actual-temperature" class="temp-value">19°</span><span class="temp-unit">C</span>
+        <span id="actual-temperature" class="temp-value">--</span><span class="temp-unit"></span>
       </h2>
       <div>
         <p id="actual-feel">
-          Feels like <span id="feelslike" class="temp-value">20</span><span class="temp-unit">°C</span>
+          Feels like <span id="feelslike" class="temp-value">--</span><span class="temp-unit"></span>
         </p>
         <br>
         <p id="actual-description">
-          Clear sky
+          Loading...
         </p>
       </div>
     </div>
@@ -90,13 +90,13 @@
         <h4>Wind</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <p><span id="windspeed" class="today-card-value">NN </span><span class="today-card-unit speed-unit">km/h</span></p>
+        <p><span id="windspeed" class="today-card-value">-- </span><span class="today-card-unit speed-unit">km/h</span></p>
       </div>
       <div class="today-card-description" style="display: flex; align-items: center;">
         <svg id="winddir-icon" class="small-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
           <path fill="#ffffff" d="M8.53 10.53a.75.75 0 1 1-1.06-1.06l4-4a.75.75 0 0 1 1.06 0l4 4a.75.75 0 1 1-1.06 1.06l-2.72-2.72v9.69a.75.75 0 0 1-1.5 0V7.81z"/>
         </svg>
-        <p id="wind-description">Description</p>
+        <p id="wind-description">Loading...</p>
       </div>
     </div>
 
@@ -108,9 +108,9 @@
         <h4>Humidity</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <span id="humidity" class="today-card-value">NN </span><span class="today-card-unit percent-unit">%</span>
+        <span id="humidity" class="today-card-value">-- </span><span class="today-card-unit percent-unit">%</span>
       </div>
-      <p id="humidity-description" class="today-card-description">Description</p>
+      <p id="humidity-description" class="today-card-description">Loading...</p>
     </div>
 
     <div id="today-sunrise" class="today-card today-sun-info">
@@ -122,7 +122,7 @@
       </div>
       <div>
         <p>Sunrise</p>
-        <p id="sunrise-time" class="sun-info-time">07:00</p>
+        <p id="sunrise-time" class="sun-info-time">--:--:--</p>
       </div>
     </div>
 
@@ -134,9 +134,9 @@
         <h4>UV Index</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <span id="uv-index" class="today-card-value">N </span><span class="today-card-unit uv-unit">UV</span>
+        <span id="uv-index" class="today-card-value">-- </span><span class="today-card-unit uv-unit">UV</span>
       </div>
-      <p id="uv-description" class="today-card-description">Description</p>
+      <p id="uv-description" class="today-card-description">Loading...</p>
     </div>
 
     <div id="today-visibility" class="today-card today-info">
@@ -147,9 +147,9 @@
         <h4>Visibility</h4>
       </div>
       <div class="today-card-value-wrapper">
-        <span id="visibility" class="today-card-value">NN </span><span class="today-card-unit distance-unit">km</span>
+        <span id="visibility" class="today-card-value">-- </span><span class="today-card-unit distance-unit">km</span>
       </div>
-      <p id="visibility-description" class="today-card-description">Description</p>
+      <p id="visibility-description" class="today-card-description">Loading...</p>
     </div>
 
     <div id="today-sunset" class="today-card today-sun-info">
@@ -161,7 +161,7 @@
       </div>
       <div>
         <p>Sunset</p>
-        <p id="sunset-time" class="sun-info-time">19:00</p>
+        <p id="sunset-time" class="sun-info-time">--:--:--</p>
       </div>
     </div>
 
@@ -170,7 +170,9 @@
   <section id="next-days">
     <h2>Next 10 days</h2>
     <div id="next-days-container">
-      
+      <p>
+        Loading...
+      </p>
       <!-- 
       <div class="next-day">
         <p class="weekday">Day</p>
@@ -182,17 +184,6 @@
         </p>
       </div> 
       -->
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
-      <div class="next-day"></div> 
     </div>
   </section>
 
