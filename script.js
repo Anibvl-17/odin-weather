@@ -110,7 +110,7 @@ function updateActualWeather(data) {
   document.getElementById("location").textContent = location;
   document.getElementById("actual-day").textContent = weekday;
   document.getElementById("actual-date").textContent = fullDate;
-  document.getElementById("time").textContent = hour;
+  document.getElementById("actual-time").textContent = hour;
   document.getElementById("actual-icon").src = `icons/${icon}.png`;
   document.getElementById("actual-temperature").textContent = temperature;
   document.getElementById("actual-description").textContent = description;
