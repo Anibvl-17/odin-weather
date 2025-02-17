@@ -313,3 +313,21 @@ document.getElementById("search-location").addEventListener("submit", (e) => {
   const location = document.getElementById("search").value;
   getWeatherData(location);
 });
+
+const welcomeText = document.getElementById("welcome-text");
+const welcomeIcon = document.getElementById("welcome-icon");
+const actualHour = new Date().getHours();
+
+if (actualHour >= 6 && actualHour < 12) {
+  welcomeText.textContent = "Good morning";
+  welcomeIcon.src = "icons/welcome-sunrise.svg";
+} else if (actualHour >= 12 && actualHour < 18) {
+  welcomeText.textContent = "Good afternoon";
+  welcomeIcon.src = "icons/welcome-sun.svg";
+} else if (actualHour >= 18 && actualHour < 21) {
+  welcomeText.textContent = "Good evening";
+  welcomeIcon.src = "icons/welcome-sunset.svg";
+} else {
+  welcomeText.textContent = "Good night";
+  welcomeIcon.src = "icons/welcome-night.svg";
+}
