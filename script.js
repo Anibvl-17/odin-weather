@@ -186,7 +186,14 @@ function updateNextDays(data) {
   let counter = 0;
 
   for (const day of data) {
-    if (counter >= 10) break;
+    if (counter >= 11) break;
+
+    // Skip first day, since it's already displayed (today)
+    if (counter === 0) {
+      counter++; 
+      continue;
+    }
+
     const date = new Date(day.datetimeEpoch * 1000);
     const weekday = date.getDay();
 
