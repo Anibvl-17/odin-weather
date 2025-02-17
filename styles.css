@@ -64,20 +64,29 @@ footer a {
   font-style: italic;
 }
 
-#search {
+#search-location {
   background-color: var(--color-card);
-  color: white;
-  font-family: inherit;
   width: 100ch;
-  padding: 8px 12px;
-  border-radius: 16px;
-  outline: none;
   border: 1px solid transparent;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  padding-inline: 8px;
   transition: ease 200ms;
 }
 
-#search:focus {
-  border-color: #b9b9b9;
+#search-location:focus-within {
+  border: 1px solid #d2d2d2;
+}
+
+#search {
+  width: 100%;
+  background: none;
+  color: white;
+  font-family: inherit;
+  padding: 8px 12px;
+  outline: none;
+  border: none;
 }
 
 /* ---- Actual Styles ---- */
