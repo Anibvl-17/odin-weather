@@ -98,7 +98,7 @@ function updateActualWeather(data) {
   // (multiply by 1000). Creating it as a Date object allows us to use the Date methods :)
   const date = new Date(data.datetimeEpoch * 1000);
   const weekday = weekdays[date.getDay()];
-  const fullDate = date.toLocaleDateString();
+  const fullDate = getLocaleDate(date);
   const hour = date.toLocaleTimeString();
 
   const icon = data.icon;
@@ -253,6 +253,27 @@ function updateUnits() {
   for (const unit of percentUnits) {
     unit.textContent = " %";
   }
+}
+
+// Returns date in the format "1st Jan, 2021"
+// Not a good practice to use this function for all dates, since it only works with the format
+// MM/DD/YYYY. 
+function getLocaleDate(date) {
+  const dateStr = date.toLocaleDateString();
+  const [month, day, year] = dateStr.split("/");
+  
+  const shortMonth = shortMonths[parseInt(month) - 1];
+
+  // Check if the day ends with 11, 12 or 13 to add "th" suffix instead of "st", "nd" or "rd".
+  if (day.endsWith("11") || day.endsWith("12") || day.endsWith("13")) {
+    return `${day}th ${shortMonth}, ${year}`;
+  }
+
+  // Check if the day is 1, 2 or 3 to add the correct suffix,
+  // Formula: (day % 10) gets the last digit of the day, "- 1" to get the correct index in the
+  //          suffix array. If the result is undefined, it means the day ends 0 or between 4 and 9
+  const suffix = ["st", "nd", "rd"][Number(day) % 10 - 1] || "th";
+  return `${day}${suffix} ${shortMonth}, ${year}`;
 }
 
 function buildNextDayItem(data) {
